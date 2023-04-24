@@ -1,6 +1,7 @@
 psycopg2-binary
 streamlit
+streamlit-authenticator==0.1.5
 pandas
 plotly
 openpyxl
-plotly
+deta
