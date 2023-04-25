@@ -25,6 +25,12 @@ time_translate = {
     'Diario' : ('day', 'del ultimo dia'), 'Semanal' : ('week', 'de la ultima semana'), 'Mensual': ('month', 'del ultimo mes')
 }
 
+def get_roles(users, username):
+    for user in users:
+        if user['key'] == username:
+            return user['role']
+    return 'no hay este usuario'
+
 def update_database(dbname):
     pwd = os.getcwd()
     print(pwd)
