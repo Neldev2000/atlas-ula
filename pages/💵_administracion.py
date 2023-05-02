@@ -39,15 +39,16 @@ if auth_status and (role in role_list):
     franchise_map   = utils.franchise_map
 
     time_translate = utils.time_translate
+     sucursal = st.sidebar.selectbox("Selecciona tu sucursal", lista_sucursales)
+    st.session_state['franchise_id'] = (franchise_map[sucursal], sucursal)
+
 ########
     ########################################
     ########################################
     st.write("""
         # 💵 Administracion
     """)
-    sucursal = st.sidebar.selectbox("Selecciona tu sucursal", lista_sucursales)
-    st.session_state['franchise_id'] = (franchise_map[sucursal], sucursal)
-
+   
     if 'franchise_id' in st.session_state:
         st.write(f" ## Facturacion de {st.session_state['franchise_id'][1]}")
         tiempo = st.radio('Selecciona el tiempo a visualiazar', ['Diario', 'Semanal', 'Mensual'], horizontal=True)

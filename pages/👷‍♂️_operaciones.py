@@ -38,11 +38,14 @@ if auth_status and (role in role_list):
     lista_sucursales = utils.lista_sucursales
     franchise_map   = utils.franchise_map
     time_translate = utils.time_translate
-    st.write("# 👷‍♂️ Operaciones")
 
     sucursal = st.sidebar.selectbox("Selecciona tu sucursal", lista_sucursales)
     st.session_state['franchise_id'] = (franchise_map[sucursal], sucursal)
 
+
+    st.write("# 👷‍♂️ Operaciones")
+
+    
     pendientes_data = utils.obtener_data(file_path='./queries/operaciones/pendientes.sql',
                         columns=['pendientes'],
                         franchise_id = st.session_state['franchise_id'][0])
