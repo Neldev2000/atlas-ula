@@ -36,7 +36,7 @@ if auth_status and (role in role_list):
 
     st.write(""" # BIENVENIDOS """)
 
-    sucursal = st.sidebar.selectbox("Selecciona tu sucursal", lista_sucursales)
-    st.session_state['franchise_id'] = (franchise_map[sucursal], sucursal)
+    sucursal = st.sidebar.selectbox("Selecciona tu sucursal", utils.lista_sucursales)
+    st.session_state['franchise_id'] = (utils.franchise_map[sucursal], sucursal)
 
     st.write("## Esta es la pagina oficial para ver las estadisticas de tu sucursal")
