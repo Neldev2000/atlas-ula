@@ -68,5 +68,5 @@ if auth_status and (role in role_list):
     
     with col2:
         if st.button('Actualizar datos') and user != main_username:
-            db.update_user(user, {'name' : name, 'password': password[0], 'role' : role})
+            db.update_user(user, {'name' : name, 'password': password[0], 'role' : role}) #.💵
     
