@@ -69,7 +69,7 @@ if auth_status and (role in role_list):
                                     columns=['payment_method', 'proporcion'],
                                     franchise_id =st.session_state['franchise_id'][0],
                                     moneda=moneda)
-            fig = px.pie(metodo_pago, names = 'payment_method', values = 'proporcion', hover_data=['payment_method'])
+            fig = px.pie(metodo_pago, names = 'payment_method', values = 'proporcion', hover_data=['payment_method'], width=400, height =800)
             st.write(fig)
             pass
         with col2 : # Transacciones hechas en USD vs VES en el ultimo mes
