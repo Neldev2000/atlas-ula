@@ -46,7 +46,7 @@ if auth_status and (role in role_list):
     username = st.text_input("Indica tu nombre de usuario", placeholder="Username")
     name = st.text_input("Indica tu nombre completo", placeholder="Name")
     password = st.text_input("Indica tu contraseña", placeholder="Password")
-    password = stauth.Hasher(password).generate()
+    password = stauth.Hasher([password]).generate()
     role = st.radio("Indica tu rol", ['full', 'operaciones', 'ventas', 'administracion'])
     if st.button('Agregar usuario'):
         db.insert_user(username, name, password[0], role)
@@ -58,7 +58,7 @@ if auth_status and (role in role_list):
     
     name = st.text_input("Indica tu nuevo nombre completo", placeholder="Name")
     password = st.text_input("Indica tu nueva contraseña", placeholder="Password")
-    password = stauth.Hasher(password).generate()
+    password = stauth.Hasher([password]).generate()
     role = st.radio("Indica tu nuevo rol", ['full', 'operaciones', 'ventas', 'administracion'], horizontal=True)
 
     col1, col2 = st.columns(2)
