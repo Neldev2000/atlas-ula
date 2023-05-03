@@ -35,7 +35,7 @@ if auth_status == None:
 if auth_status and (role in role_list):
     authenticator.logout("Logout", "sidebar")
 
-
+    st.write("# Bienvenido al sistema de usuarios")
 
     st.write("# Lista de usuarios en el sistema")
     df = pd.DataFrame.from_dict(users)
