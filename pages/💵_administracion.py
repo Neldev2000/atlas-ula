@@ -69,7 +69,7 @@ if auth_status and (role in role_list):
                                     columns=['payment_method', 'proporcion'],
                                     franchise_id =st.session_state['franchise_id'][0],
                                     moneda=moneda)
-            fig = px.pie(metodo_pago, names = 'payment_method', values = 'proporcion', hover_data=['payment_method'], width=400, height =800)
+            fig = px.pie(metodo_pago, names = 'payment_method', values = 'proporcion', hover_data=['payment_method'], width=300, height =600)
             st.write(fig)
             pass
         with col2 : # Transacciones hechas en USD vs VES en el ultimo mes
@@ -77,7 +77,7 @@ if auth_status and (role in role_list):
             currency_code = utils.obtener_data(file_path= "./queries/administracion/distrib_monedas.sql",
                                     columns=['currency_code', 'proporcion'],
                                     franchise_id =st.session_state['franchise_id'][0])
-            fig = px.pie(currency_code, names = 'currency_code', values = 'proporcion', hover_data=['currency_code'])
+            fig = px.pie(currency_code, names = 'currency_code', values = 'proporcion', hover_data=['currency_code'], width=300, height =600)
             st.write(fig)
             pass
 
